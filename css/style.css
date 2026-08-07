@@ -1353,133 +1353,776 @@ h4 {
 
 
 /* =========================================================
-   21. PRINT / PDF
-========================================================= */
+   21. PRINT / PDF — VERSION CV A4
+   ========================================================= */
 
 @media print {
 
+    /* -----------------------------------------------------
+       PAGE
+    ----------------------------------------------------- */
+
     @page {
-        size: A4;
-        margin: 12mm;
+        size: A4 portrait;
+        margin: 10mm;
     }
 
     html,
     body {
+        width: auto;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
         background: #ffffff !important;
-        color: #222222 !important;
-        font-size: 10pt;
+        color: #28312b !important;
+        font-family: var(--font-body);
+        font-size: 9.2pt;
+        line-height: 1.35;
+
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
-    body {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
+
+    /* -----------------------------------------------------
+       MASQUER LES ÉLÉMENTS DU SITE
+       ----------------------------------------------------- */
 
     #mainNav,
     .hero-scroll,
     .back-to-top,
     .hero-actions,
     .hero-contact,
-    .contact-actions {
+    .contact-actions,
+    .footer {
         display: none !important;
     }
 
+
+    /* -----------------------------------------------------
+       RESET DES SECTIONS
+       ----------------------------------------------------- */
+
+    main {
+        width: 210mm;
+        margin: 0;
+        padding: 0;
+    }
+
+    .section,
+    .hero,
+    .section-about,
+    .section-skills,
+    .section-experience,
+    .section-education,
+    .section-extra,
+    .section-contact {
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #ffffff !important;
+    }
+
+
+    /* -----------------------------------------------------
+       CV : FORMAT A4
+       ----------------------------------------------------- */
+
     .hero {
-        min-height: auto;
-        padding: 20px 0 30px;
+        display: block;
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 12mm 14mm 7mm !important;
         background: #ffffff !important;
     }
 
     .hero::before,
     .hero::after,
     .hero-overlay {
-        display: none;
+        display: none !important;
+    }
+
+    .hero-container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    /* -----------------------------------------------------
+       EN-TÊTE DU CV
+       ----------------------------------------------------- */
+
+    .hero .row {
+        display: grid !important;
+        grid-template-columns: 1fr 34mm;
+        gap: 7mm;
+        align-items: start;
+        margin: 0 !important;
+    }
+
+    .hero .col-lg-7,
+    .hero .col-lg-5 {
+        width: auto !important;
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .hero .col-lg-7 {
+        grid-column: 1;
+    }
+
+    .hero .col-lg-5 {
+        grid-column: 2;
+    }
+
+
+    /* -----------------------------------------------------
+       NOM
+       ----------------------------------------------------- */
+
+    .hero .eyebrow {
+        margin: 0 0 2mm;
+        color: #3f5f4a !important;
+        font-size: 8pt;
+        font-weight: 700;
+        letter-spacing: 0.16em;
     }
 
     .hero h1 {
-        font-size: 34pt;
+        max-width: none;
+        margin: 0 0 3mm;
+        color: #22362b !important;
+        font-family: var(--font-heading);
+        font-size: 29pt;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
     }
+
+    .hero h1 span {
+        display: inline;
+        color: #6d8a68 !important;
+    }
+
+    .hero h1 span::before {
+        content: " ";
+    }
+
+
+    /* -----------------------------------------------------
+       PROFIL
+       ----------------------------------------------------- */
 
     .hero-intro {
         max-width: none;
-        font-size: 10pt;
+        margin: 0;
+        color: #4f5b53 !important;
+        font-size: 9pt;
+        line-height: 1.45;
     }
 
+
+    /* -----------------------------------------------------
+       PHOTO
+       ----------------------------------------------------- */
+
     .hero-card {
-        max-width: 180px;
-        box-shadow: none;
-        transform: none;
+        width: 34mm;
+        max-width: 34mm;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        transform: none !important;
+        backdrop-filter: none !important;
+    }
+
+    .hero-card-image {
+        width: 34mm;
+        height: 42mm;
+        aspect-ratio: auto;
+        border-radius: 4mm;
+        overflow: hidden;
+        background: #d9e6d5 !important;
+    }
+
+    .hero-card-image::after {
+        display: none !important;
+    }
+
+    .hero-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .hero-card-content {
-        display: none;
+        display: none !important;
     }
 
+
+    /* -----------------------------------------------------
+       SECTIONS
+       ----------------------------------------------------- */
+
     .section {
-        padding: 35px 0;
-        background: #ffffff !important;
+        display: block !important;
+        width: 100%;
+        padding: 5mm 14mm 0 !important;
+        margin: 0 !important;
     }
 
     .section-heading {
-        margin-bottom: 20px;
+        display: flex;
+        align-items: baseline;
+        gap: 3mm;
+        margin: 0 0 3mm;
+    }
+
+    .section-number {
+        padding: 0;
+        color: #6d8a68 !important;
+        font-size: 7pt;
+        line-height: 1;
+    }
+
+    .section-kicker {
+        margin: 0 0 1mm;
+        color: #6d8a68 !important;
+        font-size: 7pt;
+        line-height: 1;
+        letter-spacing: 0.14em;
     }
 
     .section-heading h2 {
-        font-size: 22pt;
+        max-width: none;
+        margin: 0;
+        color: #22362b !important;
+        font-size: 15pt;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
     }
 
     .section-heading h2::after {
-        margin-top: 8px;
+        display: none !important;
     }
 
-    .skill-card,
-    .education-card,
-    .additional-training,
-    .quote-card {
-        box-shadow: none;
+
+    /* -----------------------------------------------------
+       ABOUT
+       ----------------------------------------------------- */
+
+    .section-about .row {
+        display: grid !important;
+        grid-template-columns: 1fr 45mm;
+        gap: 7mm;
+        margin: 0 !important;
     }
 
-    .skill-card {
-        padding: 15px;
+    .section-about .col-lg-7,
+    .section-about .col-lg-5 {
+        width: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
-    .timeline-item {
-        break-inside: avoid;
-        page-break-inside: avoid;
-        padding-bottom: 25px;
+    .about-content {
+        max-width: none;
     }
 
-    .timeline-content {
+    .about-content .lead {
+        margin-bottom: 2mm;
+        color: #37443b !important;
         font-size: 9pt;
+        line-height: 1.4;
     }
 
-    .timeline-content h3 {
+    .about-content p {
+        margin-bottom: 2mm;
+        color: #566159 !important;
+        font-size: 8.5pt;
+        line-height: 1.4;
+    }
+
+    .quote-card {
+        padding: 4mm;
+        background: #3f5f4a !important;
+        border-radius: 3mm;
+        box-shadow: none !important;
+    }
+
+    .quote-card::before,
+    .quote-card::after {
+        display: none !important;
+    }
+
+    .quote-card i {
         font-size: 14pt;
     }
 
-    .timeline-content ul {
-        margin-top: 8px;
+    .quote-card blockquote {
+        margin: 1mm 0 2mm;
+        color: #ffffff !important;
+        font-size: 10pt;
+        line-height: 1.25;
+    }
+
+    .quote-card p {
+        color: rgba(255, 255, 255, 0.75) !important;
+        font-size: 7pt;
+    }
+
+
+    /* -----------------------------------------------------
+       COMPÉTENCES
+       ----------------------------------------------------- */
+
+    .section-skills .row {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 5mm;
+        margin: 0 !important;
+    }
+
+    .section-skills .col-lg-6 {
+        width: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .skill-card {
+        height: auto !important;
+        min-height: 0;
+        padding: 4mm;
+        background: #f5f7f3 !important;
+        border: 1px solid #dfe4dc !important;
+        border-radius: 3mm;
+        box-shadow: none !important;
+    }
+
+    .skill-icon {
+        display: none !important;
+    }
+
+    .skill-card h3 {
+        margin-bottom: 2mm;
+        color: #2d4637 !important;
+        font-size: 10pt;
+    }
+
+    .skill-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1mm 4mm;
+        margin: 0;
+    }
+
+    .skill-list li {
+        padding-left: 3mm;
+        color: #566159 !important;
+        font-size: 7.4pt;
+        line-height: 1.3;
+    }
+
+    .skill-list li::before {
+        top: 0.6em;
+        width: 2.5px;
+        height: 2.5px;
+        background: #6d8a68 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       EXPÉRIENCE
+       ----------------------------------------------------- */
+
+    .section-experience {
+        padding-top: 5mm !important;
+    }
+
+    .section-experience .section-heading {
+        margin-bottom: 3mm;
+    }
+
+
+    /* CONTENEUR DES EXPÉRIENCES */
+    .section-experience .timeline {
+        max-width: none;
+        margin: 0;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3.5mm;
+    }
+
+
+    /* SUPPRESSION DE LA TIMELINE */
+    .section-experience .timeline::before {
+        display: none !important;
+    }
+
+    .section-experience .timeline-marker {
+        display: none !important;
+    }
+
+
+    /* CHAQUE EXPÉRIENCE = BLOC */
+    .section-experience .timeline-item {
+        display: block !important;
+
+        padding: 0 !important;
+        margin: 0;
+
+        background: #f5f7f3 !important;
+        border: 1px solid #dfe4dc !important;
+        border-left: 3px solid #6d8a68 !important;
+
+        border-radius: 2.5mm;
+
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+
+    /* DATE */
+    .section-experience .timeline-date {
+        display: block;
+
+        padding: 2.5mm 3.5mm 0 !important;
+
+        color: #6d8a68 !important;
+
+        font-size: 6.5pt;
+        font-weight: 700;
+        line-height: 1.2;
+
+        text-align: left !important;
+    }
+
+
+    /* CONTENU */
+    .section-experience .timeline-content {
+        padding: 1mm 3.5mm 3mm !important;
+    }
+
+
+    /* Catégorie */
+
+    .section-experience .timeline-category {
+        margin: 0 0 0.8mm;
+
+        color: #6d8a68 !important;
+
+        font-size: 6pt;
+        font-weight: 700;
+        line-height: 1.1;
+
+        letter-spacing: 0.12em;
+    }
+
+
+    /* Poste */
+
+    .section-experience .timeline-content h3 {
+        margin: 0 0 0.8mm;
+
+        color: #2d4637 !important;
+
+        font-family: var(--font-heading);
+        font-size: 10.5pt;
+        font-weight: 700;
+
+        line-height: 1.15;
+    }
+
+
+    /* Entreprise / contexte */
+
+    .section-experience .timeline-content h4 {
+        margin: 0 0 1.5mm;
+
+        color: #68736c !important;
+
+        font-size: 7pt;
+        font-weight: 600;
+
+        line-height: 1.2;
+    }
+
+
+    /* Description */
+
+    .section-experience .timeline-content > p:not(.timeline-category) {
+        max-width: none;
+
+        margin: 0 0 1.5mm;
+
+        color: #566159 !important;
+
+        font-size: 7.2pt;
+        line-height: 1.35;
+    }
+
+
+    /* Liste */
+
+    .section-experience .timeline-content ul {
+        max-width: none;
+
+        margin: 0;
+        padding-left: 3.5mm;
+
+        color: #566159 !important;
+
+        font-size: 7pt;
+        line-height: 1.3;
+    }
+
+    .section-experience .timeline-content li {
+        margin-bottom: 0.6mm;
+    }
+
+
+    /* PREMIÈRE EXPÉRIENCE : PLUS IMPORTANTE */
+    .section-experience .timeline-item:first-child {
+        grid-column: 1 / -1;
+
+        background: #edf3ea !important;
+        border-left-width: 4px !important;
+    }
+
+    .section-experience .timeline-item:first-child
+    .timeline-content {
+        padding-bottom: 3.5mm !important;
+    }
+
+    .section-experience .timeline-item:first-child
+    .timeline-content h3 {
+        font-size: 12pt;
+    }
+
+    .section-experience .timeline-item:first-child
+    .timeline-content > p:not(.timeline-category) {
+        font-size: 7.6pt;
+    }
+
+
+    /* ÉVITER LES COUPURES */
+    .section-experience .timeline-item,
+    .section-experience .timeline-content {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+
+    /* -----------------------------------------------------
+       FORMATION
+       ----------------------------------------------------- */
+
+    .section-education .row {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 4mm;
+        margin: 0 !important;
+    }
+
+    .section-education .col-lg-6,
+    .section-education .col-12 {
+        width: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     .education-card {
-        padding: 15px;
+        height: auto !important;
+        padding: 4mm;
+        background: #f5f7f3 !important;
+        border: 1px solid #dfe4dc !important;
+        border-radius: 3mm;
+        box-shadow: none !important;
     }
 
-    .contact-card {
-        padding: 25px;
-        box-shadow: none;
+    .education-card.featured {
+        background: #3f5f4a !important;
+        border-color: #3f5f4a !important;
     }
 
-    .footer {
-        padding: 15px 0;
+    .education-year {
+        margin-bottom: 1.5mm;
+        font-size: 6.5pt;
     }
+
+    .education-card h3 {
+        margin-bottom: 1mm;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    .education-card p {
+        font-size: 7.5pt;
+        line-height: 1.35;
+    }
+
+    .education-tag {
+        margin-top: 1mm;
+        padding: 1mm 2mm;
+        font-size: 6pt;
+    }
+
+    .additional-training {
+        margin-top: 3mm;
+        padding: 3mm;
+        background: #ffffff !important;
+        border: 1px solid #dfe4dc !important;
+        border-radius: 3mm;
+        box-shadow: none !important;
+    }
+
+    .additional-training h3 {
+        margin-bottom: 1.5mm;
+        font-size: 8pt;
+    }
+
+    .training-list {
+        gap: 1mm;
+    }
+
+    .training-list span {
+        padding: 1mm 2mm;
+        font-size: 6.5pt;
+    }
+
+
+    /* -----------------------------------------------------
+       LANGUES + CENTRES D'INTÉRÊT
+       ----------------------------------------------------- */
+
+    .section-extra .row {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 7mm;
+        margin: 0 !important;
+    }
+
+    .section-extra .col-lg-6 {
+        width: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .extra-block h2 {
+        margin-bottom: 2mm;
+        font-size: 12pt;
+        line-height: 1.1;
+    }
+
+    .language-item {
+        padding: 1.5mm 0;
+    }
+
+    .language-item strong {
+        font-size: 7.5pt;
+    }
+
+    .language-item span {
+        font-size: 6.5pt;
+    }
+
+    .language-level {
+        gap: 1px;
+    }
+
+    .language-level span {
+        width: 4mm;
+        height: 1mm;
+    }
+
+    .interest-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5mm;
+    }
+
+    .interest-grid span {
+        padding: 1.5mm;
+        background: #f5f7f3 !important;
+        font-size: 6.7pt;
+        line-height: 1.2;
+    }
+
+    .interest-grid i {
+        font-size: 8pt;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT
+       ----------------------------------------------------- */
+
+    .section-contact {
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       ANIMATIONS
+       ----------------------------------------------------- */
+
+    .reveal,
+    .reveal.visible {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       ÉVITER LES COUPURES
+       ----------------------------------------------------- */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    ul,
+    article {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+
+    /* -----------------------------------------------------
+       LIENS
+       ----------------------------------------------------- */
 
     a {
+        color: inherit !important;
         text-decoration: none !important;
     }
 
     a[href]::after {
         content: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       BOOTSTRAP
+       ----------------------------------------------------- */
+
+    .row {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 0;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin: 0 !important;
     }
 
 }
@@ -1640,5 +2283,4 @@ h4 {
     .timeline-content ul {
         color: #444444 !important;
     }
-
 }
