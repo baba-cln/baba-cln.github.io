@@ -351,4 +351,17 @@
     console.log(
         "CV web chargé avec succès."
     );
+
+    /* =====================================================
+       15. PRINTER MODE
+    ===================================================== */
+
+    const printCV = document.getElementById("printCV");
+
+    if(printCV){
+        printCV.addEventListener("click", () => {
+            window.print();
+        });
+    }
+
 });
