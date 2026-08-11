@@ -306,6 +306,10 @@ h4 {
     letter-spacing: 0.18em;
 }
 
+.hero .eyebrow-name, .hero-info {
+    display: none;
+}
+
 .hero h1 {
     max-width: 780px;
     margin: 0 0 1.4rem;
@@ -1482,12 +1486,26 @@ h4 {
        NOM
        ----------------------------------------------------- */
 
-    .hero .eyebrow {
+    .hero .eyebrow, .hero-info {
         margin: 0 0 2mm;
         color: #3f5f4a !important;
         font-size: 8pt;
         font-weight: 700;
         letter-spacing: 0.16em;
+    }
+
+    .hero .eyebrow-name {
+        margin: 0 0 2mm;
+        color: #22362b !important;
+        font-size: 8pt;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        display: inline;
+    }
+
+    .hero .hero-info {
+        display: inline;
+        color: #6d8a68 !important;
     }
 
     .hero h1 {
