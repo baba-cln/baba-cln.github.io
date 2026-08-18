@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "catppuccin.catppuccin-vsc",
+        "ms-vscode.live-server",
+        "esbenp.prettier-vscode"
+    ]
+}

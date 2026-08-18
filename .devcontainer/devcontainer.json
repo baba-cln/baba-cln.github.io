@@ -1,0 +1,36 @@
+{
+    "name": "baba-cln.github.io",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.12"
+        }
+    },
+    "forwardPorts": [
+        8000
+    ],
+    "portsAttributes": {
+        "8000": {
+            "label": "Static site preview",
+            "onAutoForward": "notify"
+        }
+    },
+    "postStartCommand": "bash -lc 'nohup python3 -m http.server 8000 --directory /workspaces/baba-cln.github.io --bind 0.0.0.0 >/tmp/baba-site.log 2>&1 &'",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "workbench.colorTheme": "Catppuccin Mocha",
+                "editor.formatOnSave": true,
+                "files.trimTrailingWhitespace": true,
+                "files.insertFinalNewline": true,
+                "html.format.wrapLineLength": 120,
+                "liveServer.settings.port": 8000
+            },
+            "extensions": [
+                "catppuccin.catppuccin-vsc",
+                "ms-vscode.live-server",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    }
+}
