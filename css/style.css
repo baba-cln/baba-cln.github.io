@@ -1727,7 +1727,7 @@ h4 {
         height: auto !important;
         min-height: 0;
         padding: 4mm;
-        background: #f5f7f3 !important;
+        background: #ffffff !important;
         border: 1px solid #dfe4dc !important;
         border-radius: 3mm;
         box-shadow: none !important;
@@ -1806,7 +1806,7 @@ h4 {
         padding: 0 !important;
         margin: 0;
 
-        background: #f5f7f3 !important;
+        background: #ffffff !important;
         border: 1px solid #dfe4dc !important;
         border-left: 3px solid #6d8a68 !important;
 
@@ -1892,7 +1892,7 @@ h4 {
 
         color: #566159 !important;
 
-        font-size: 7.2pt;
+        font-size: 8.8pt !important;
         line-height: 1.35;
     }
 
@@ -1922,7 +1922,7 @@ h4 {
     .section-experience .timeline-item:first-child {
         grid-column: 1 / -1;
 
-        background: #edf3ea !important;
+        background: #ffffff !important;
         border-left-width: 4px !important;
     }
 
@@ -1971,7 +1971,7 @@ h4 {
     .education-card {
         height: auto !important;
         padding: 4mm;
-        background: #f5f7f3 !important;
+        background: #ffffff !important;
         border: 1px solid #dfe4dc !important;
         border-radius: 3mm;
         box-shadow: none !important;
@@ -2079,7 +2079,8 @@ h4 {
 
     .interest-grid span {
         padding: 1.5mm;
-        background: #f5f7f3 !important;
+        background: #ffffff !important;
+        border: 1px solid #dfe4dc !important;
         font-size: 6.7pt;
         line-height: 1.2;
     }

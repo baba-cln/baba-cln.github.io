@@ -4,5 +4,6 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "html.format.wrapLineLength": 120,
-    "liveServer.settings.port": 8000
+    "liveServer.settings.port": 8000,
+    "livePreview.defaultPreviewPath": "/index.html"
 }
