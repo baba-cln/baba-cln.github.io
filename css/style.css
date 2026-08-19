@@ -1666,14 +1666,14 @@ h4 {
     .about-content .lead {
         margin-bottom: 2mm;
         color: #37443b !important;
-        font-size: 9pt;
+        font-size: 8.8pt !important;
         line-height: 1.4;
     }
 
     .about-content p {
         margin-bottom: 2mm;
         color: #566159 !important;
-        font-size: 8.5pt;
+        font-size: 8.8pt !important;
         line-height: 1.4;
     }
 
@@ -1994,8 +1994,8 @@ h4 {
     }
 
     .education-card p {
-        font-size: 7.5pt;
-        line-height: 1.35;
+        font-size: 8.8pt !important;
+        line-height: 1.4;
     }
 
     .education-tag {
@@ -2024,7 +2024,7 @@ h4 {
 
     .training-list span {
         padding: 1mm 2mm;
-        font-size: 6.5pt;
+        font-size: 8.8pt !important;
     }
 
 
@@ -2060,7 +2060,7 @@ h4 {
     }
 
     .language-item span {
-        font-size: 6.5pt;
+        font-size: 7pt;
     }
 
     .language-level {
@@ -2081,12 +2081,12 @@ h4 {
         padding: 1.5mm;
         background: #ffffff !important;
         border: 1px solid #dfe4dc !important;
-        font-size: 6.7pt;
+        font-size: 8.8pt;
         line-height: 1.2;
     }
 
     .interest-grid i {
-        font-size: 8pt;
+        font-size: 8.8pt;
     }
 
 
